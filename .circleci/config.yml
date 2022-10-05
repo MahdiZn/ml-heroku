@@ -89,10 +89,10 @@ workflows:
       - section_07_deploy_app_to_heroku:
           requires:
             - section_07_test_app
-          filters:
-            branches:
-              only:
-                - master
+         # filters:
+           # branches:
+              #only:
+               # - master
       # upload after git tags are created
       - section_07_test_and_upload_regression_model:
           <<: *tags_only
