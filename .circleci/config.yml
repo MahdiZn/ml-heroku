@@ -40,10 +40,10 @@ jobs:
           name: fetch data first
           command: |
             tox -e fetch_data         
-      - run:
-          name: Runnning app tests
-          command: |
-            tox
+      #- run:
+          #name: Runnning app tests
+          #command: |
+            #tox
 
   section_07_deploy_app_to_heroku:
     <<: *defaults
