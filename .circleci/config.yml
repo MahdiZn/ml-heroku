@@ -2,7 +2,7 @@ version: 2
 
 defaults: &defaults
   docker:
-    - image: circleci/python:3.9.5
+    - image: circleci/python:3.9.14
   working_directory: ~/project
 
 prepare_venv: &prepare_venv
@@ -36,6 +36,10 @@ jobs:
       - checkout:
           path: ~/project
       - *prepare_tox
+      - run:
+          name: fetch data first
+          command: |
+            tox -e fetch_data         
       - run:
           name: Runnning app tests
           command: |
