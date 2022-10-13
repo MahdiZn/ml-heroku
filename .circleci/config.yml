@@ -70,6 +70,7 @@ jobs:
           name: Publish model to Gemfury
           command: |
             tox -e publish_model
+
   section_08_deploy_app_container_in_heroku:
     <<: *defaults
     steps:
@@ -92,6 +93,7 @@ jobs:
           name: Release to Heroku
           command: |
             cd section-08-deploying-with-containers && make release-heroku         
+
   
 tags_only: &tags_only
   filters:
@@ -115,9 +117,12 @@ workflows:
       # upload after git tags are created
       - section_07_test_and_upload_regression_model:
           <<: *tags_only
+
       - section_08_deploy_app_container_in_heroku
           #filters:
            # branches:
              # only:
               #  - master 
 
+
+       
