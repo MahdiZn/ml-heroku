@@ -1,0 +1,6 @@
+# ejecutar desde la raiz donde se ubica el dockerfile sino especificar donde se ubica el dockerfile docker build -t house-api /doc/algo
+docker build -t house-api .
+
+#en este caso habra que espicificar el puerto  -e significa envrement 
+# --rm para cuando hacer stop del comtainer se elemina y no se queda referenciamdo la imagen
+docker run --rm -p 8001:8001 -e PORT=8001 house-api
