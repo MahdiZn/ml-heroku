@@ -9,7 +9,7 @@ WORKDIR /opt/house-prices-api
 # en caso de no querer usar el modelo que se ubica en gemfurry pues habra que añadir el modelo empaquetado  en la carpeta y añadirlo en requirements 
 # pip_extra_index_url se declara en la parte de variables de entorno de circleci ver Makefile para entender 
 
-#ARG PIP_EXTRA_INDEX_URL
+ARG PIP_EXTRA_INDEX_URL
 
 # Install requirements, including from Gemfury
 ADD ./house-prices-api /opt/house-prices-api/
