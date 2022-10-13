@@ -1,4 +1,3 @@
-
 version: 2
 
 defaults: &defaults
@@ -37,7 +36,7 @@ jobs:
       - checkout:
           path: ~/project
       - *prepare_tox
-            
+
       - run:
           name: Runnning app tests
           command: |
