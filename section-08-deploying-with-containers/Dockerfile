@@ -16,15 +16,15 @@ ADD ./house-prices-api /opt/house-prices-api/
 RUN pip install --upgrade pip
 RUN pip install -r /opt/house-prices-api/requirements.txt
 
-#RUN chmod +x /opt/house-prices-api/run.sh
+RUN chmod +x /opt/house-prices-api/run.sh
 RUN chown -R ml-api-user:ml-api-user ./
 
 USER ml-api-user
 
 EXPOSE 8001
 
-#CMD ["bash", "./run.sh"]
+CMD ["bash", "./run.sh"]
 
 # otra opcion eliminar el run.sh y poner lo siguiente asi evitamos pasar el port como argumento.
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "$PORT"]
+#CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001"]
