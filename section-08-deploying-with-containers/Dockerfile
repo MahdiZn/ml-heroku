@@ -27,4 +27,4 @@ EXPOSE 8001
 
 # otra opcion eliminar el run.sh y poner lo siguiente asi evitamos pasar el port como argumento.
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "$PORT"]
