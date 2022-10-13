@@ -36,10 +36,7 @@ jobs:
       - checkout:
           path: ~/project
       - *prepare_tox
-      - run:
-          name: fetch data first
-          command: |
-            tox -e fetch_data         
+
       - run:
           name: Runnning app tests
           command: |
